@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ZamApp.Models;
+using ZamApp.Services.EFServices;
+using ZamApp.Services.Interface;
 
 namespace ZamApp
 {
@@ -28,6 +30,8 @@ namespace ZamApp
 		{
 			services.AddDbContext<AppDbContext>(options =>
 				options.UseSqlServer(Configuration.GetConnectionString("ZamContext")));
+
+			services.AddTransient<ICourseService, EFCourseService>();
 
 			services.AddIdentity<IdentityUser, IdentityRole>()
 				.AddEntityFrameworkStores<AppDbContext>();

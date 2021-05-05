@@ -2,3 +2,62 @@
 @model ZamApp.Pages.Courses.GetAllCoursesModel
 @{
 }
+
+<p>
+	<a asp-page="/Courses/Create">Create new Course</a>
+</p>
+
+<h4 style="color: seagreen">List of courses</h4>
+
+<table class="table">
+	<thead>
+	<tr>
+		<th>
+			ZealandLocation
+		</th>
+		<th>
+			EndPoint
+		</th>
+		<th>
+			StartPoint
+		</th>
+		<th>
+			PickUpPoint1
+		</th>
+		<th>
+			PickUpPoint2
+		</th>
+		<th>
+			PickUpPoint3
+		</th>
+	</tr>
+	</thead>
+	<tbody>
+	@if (Model.Courses.Count() != 0)
+	{
+		@foreach (var item in Model.Courses)
+		{
+		<tr>
+			<td>
+				@item.ZealandLocation
+			</td>
+			<td>
+				@item.StartPoint
+			</td>
+			<td>
+				@item.EndPoint
+			</td>
+			<td>
+				@item.PickUpPoint1
+			</td>
+			<td>
+				@item.PickUpPoint2
+			</td>
+			<td>
+				@item.PickUpPoint3
+			</td>
+		</tr>
+		}
+	}
+	</tbody>
+</table>
