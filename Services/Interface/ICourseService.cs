@@ -9,5 +9,6 @@ namespace ZamApp.Services.Interface
 	public interface ICourseService
 	{
 		IEnumerable<Course> GetAllCourses();
+		Course GetCourse(int id);
 	}
 }

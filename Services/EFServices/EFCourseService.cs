@@ -20,5 +20,10 @@ namespace ZamApp.Services.EFServices
 		{
 			return _context.Courses;
 		}
+
+		public Course GetCourse(int id)
+		{
+			return _context.Courses.Find(id);
+		}
 	}
 }

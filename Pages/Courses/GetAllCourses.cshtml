@@ -9,7 +9,7 @@
 
 <h4 style="color: seagreen">List of courses</h4>
 
-<table class="table">
+@*<table class="table">
 	<thead>
 	<tr>
 		<th>
@@ -60,4 +60,24 @@
 		}
 	}
 	</tbody>
-</table>
+</table>*@
+
+<div class="container">
+	<div class="row">
+		@foreach (var p in Model.Courses)
+		{
+			<div class="col-sm">
+				<div class="card" style="width: 30rem;">
+					<img class="card-img-top" src="~/img/Zealand.jpg" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Zealand Location: @p.ZealandLocation</h5>
+						<p class="card-text">Startpoint: @p.StartPoint</p>
+						<p class="card-text">Endpoint: @p.EndPoint</p>
+						<a asp-page="Detail" asp-route-id="@p.CourseId" class="btn btn-primary">More information</a>
+					</div>
+				</div>
+				<br />
+			</div>
+		}
+	</div>
+</div>

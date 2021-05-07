@@ -1,0 +1,19 @@
+﻿@page 
+@model ZamApp.Pages.Courses.DetailModel
+@{
+
+}
+
+<h1>Information</h1>
+
+<div class="nav-item">
+	<h3>IMAGE HERE</h3>
+	<h5>Zealand Location: @Model.Course.ZealandLocation </h5>
+	<h5>Startpoint: @Model.Course.StartPoint </h5>
+	<h5>Endpoint: @Model.Course.EndPoint </h5>
+	<h5>Pickup points: @Model.Course.PickUpPoint1, @Model.Course.PickUpPoint2, @Model.Course.PickUpPoint3 </h5>
+
+	<form method="post">
+		<a class="btn btn-primary" asp-page="/Courses/GetAllCourses">Go back</a>
+	</form>
+</div>
