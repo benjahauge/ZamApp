@@ -27,7 +27,7 @@ namespace ZamApp.Pages.Account
 	        URL = ReturnUrl;
         }
 
-        public async Task<IActionResult> OnPost()
+        public async Task<IActionResult> OnPost(string ReturnUrl)
         {
 	        if (!ModelState.IsValid)
 	        {
