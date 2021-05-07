@@ -10,5 +10,6 @@ namespace ZamApp.Services.Interface
 	{
 		IEnumerable<Course> GetAllCourses();
 		Course GetCourse(int id);
+		Course AddCourse(Course c);
 	}
 }

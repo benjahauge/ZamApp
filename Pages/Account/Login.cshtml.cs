@@ -38,7 +38,7 @@ namespace ZamApp.Pages.Account
 		        var result = await signInManager.PasswordSignInAsync(loginModel.Email, loginModel.Password, loginModel.RememberMe, false);
 		        if (result.Succeeded)
 		        {
-			        return RedirectToPage("Courses/GetAllCourses");
+			        return RedirectToPage("/Courses/GetAllCourses");
 		        }
 		        else
 		        {

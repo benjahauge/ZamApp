@@ -9,33 +9,31 @@ using ZamApp.Services.Interface;
 
 namespace ZamApp.Pages.Courses
 {
-    public class DetailModel : PageModel
+    public class CreateModel : PageModel
     {
 	    private readonly ICourseService _repo;
 
-	    public DetailModel(ICourseService repo)
-	    {
-		    _repo = repo;
-	    }
-
-		[BindProperty]
+        [BindProperty]
         public Course Course { get; set; }
 
-        public IActionResult OnGet(int id)
+        public CreateModel(ICourseService repo)
         {
-	        Course = _repo.GetCourse(id);
+	        _repo = repo;
+        }
 
-	        if (Course == null)
-	        {
-		        return RedirectToPage("GetAllCourses");
-	        }
-
+        public IActionResult OnGet()
+        {
 	        return Page();
         }
 
         public IActionResult OnPost()
         {
-			//Booking course method here
+	        if (!ModelState.IsValid)
+	        {
+		        return Page();
+	        }
+
+	        _repo.AddCourse(Course);
 	        return RedirectToPage("GetAllCourses");
         }
     }

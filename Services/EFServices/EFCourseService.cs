@@ -25,5 +25,29 @@ namespace ZamApp.Services.EFServices
 		{
 			return _context.Courses.Find(id);
 		}
+
+		public Course AddCourse(Course c)
+		{
+			GetAllCourses().ToList();
+			List<int> CourseIds = new List<int>();
+			foreach (var item in GetAllCourses())
+			{
+				CourseIds.Add(item.CourseId);
+			}
+
+			if (CourseIds.Count != 0)
+			{
+				int start = CourseIds.Max();
+				c.CourseId = start + 1;
+			}
+			else
+			{
+				c.CourseId = 1;
+			}
+
+			_context.Courses.Add(c);
+			_context.SaveChanges();
+			return c;
+		}
 	}
 }

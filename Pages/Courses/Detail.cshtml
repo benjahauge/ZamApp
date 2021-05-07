@@ -11,9 +11,14 @@
 	<h5>Zealand Location: @Model.Course.ZealandLocation </h5>
 	<h5>Startpoint: @Model.Course.StartPoint </h5>
 	<h5>Endpoint: @Model.Course.EndPoint </h5>
-	<h5>Pickup points: @Model.Course.PickUpPoint1, @Model.Course.PickUpPoint2, @Model.Course.PickUpPoint3 </h5>
+	<h5>Pickup points:</h5> 
+	<p>1: @Model.Course.PickUpPoint1</p>
+	<p>2: @Model.Course.PickUpPoint2</p>
+	<p>3: @Model.Course.PickUpPoint3</p>
+	
 
 	<form method="post">
+		@*<button type="submit" class="btn btn-primary">Book this course</button>*@
 		<a class="btn btn-primary" asp-page="/Courses/GetAllCourses">Go back</a>
 	</form>
 </div>

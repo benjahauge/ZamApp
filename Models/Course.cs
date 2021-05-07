@@ -21,7 +21,7 @@ namespace ZamApp.Models
 		[StringLength(50)]
 		public string EndPoint { get; set; }
 
-		[Required]
+		[Required(ErrorMessage = "Must be either: Roskilde, Køge, Næstved, Slagelse, Holbæk or Nykøbing F.")]
 		[StringLength(50)]
 		public string ZealandLocation { get; set; }
 
