@@ -14,8 +14,13 @@ namespace ZamApp.Models
     {
         [Key]
         public int BookingId { get; set; }
+
         public int CourseId { get; set; }
+        public Course Course { get; set; }
+
         public int UserId { get; set; }
+        public User User { get; set; }
+
         [Column("Date_From", TypeName = "date")]
         public DateTime DateFrom { get; set; }
         [Column("Date_To", TypeName = "date")]
