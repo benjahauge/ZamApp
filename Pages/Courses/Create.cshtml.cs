@@ -13,8 +13,7 @@ namespace ZamApp.Pages.Courses
     {
 	    private readonly ICourseService _repo;
 
-        [BindProperty]
-        public Course Course { get; set; }
+	    [BindProperty] public Course Course { get; set; } = new Course();
 
         public CreateModel(ICourseService repo)
         {
@@ -28,6 +27,7 @@ namespace ZamApp.Pages.Courses
 
         public IActionResult OnPost()
         {
+	        
 	        if (!ModelState.IsValid)
 	        {
 		        return Page();

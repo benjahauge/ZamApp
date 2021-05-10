@@ -2,3 +2,44 @@
 @model ZamApp.Pages.Account.GetAllUsersModel
 @{
 }
+
+@if (Model.Users.Count() != 0)
+{
+	foreach (var user in Model.Users)
+	{
+		<div class="card mb-3">
+			<div class="card-header">
+				User Id: @user.Id
+			</div>
+			<div class="card-body">
+				<h5 class="card-title">@user.Email</h5>
+			</div>
+			<div class="card-body">
+				<h5 class="card-title">@user.Name</h5>
+			</div>
+			<div class="card-body">
+				<h5 class="card-title">@user.Address</h5>
+			</div>
+			<div class="card-footer">
+				<a asp-page="Courses/Create" asp-route-uid="@user.Id">Create a course</a>
+			</div>
+		</div>
+		
+	}
+}
+else
+{
+	<div class="card">
+		<div class="card-header">
+			No users created yet
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">
+				Use the button below to create a user
+			</h5>
+			<a class="btn btn-primary" style="width:auto" asp-page="Accounts/RegisterPage">
+				Create User
+			</a>
+		</div>
+	</div>
+}

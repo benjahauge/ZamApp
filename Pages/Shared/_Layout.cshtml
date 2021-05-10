@@ -43,6 +43,16 @@
 					                <button type="submit" class="nav-link btn btn-link text-dark">Hello @User.Identity.Name Logout</button>
 				                </form>
 			                </li>
+			                <li class="nav-item dropdown">
+				                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+				                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					                Manage
+				                </a>
+				                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					                <a class="dropdown-item" asp-page="/Account/GetAllUsers">Users</a>
+					                @*<a class="dropdown-item" asp-page="/Roles/GetAllRoles">Roles</a>*@
+				                </div>
+			                </li>
 		                }
 		                else
 		                {
