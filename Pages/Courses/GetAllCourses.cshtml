@@ -9,58 +9,6 @@
 
 <h4 style="color: seagreen">List of courses</h4>
 
-@*<table class="table">
-	<thead>
-	<tr>
-		<th>
-			ZealandLocation
-		</th>
-		<th>
-			EndPoint
-		</th>
-		<th>
-			StartPoint
-		</th>
-		<th>
-			PickUpPoint1
-		</th>
-		<th>
-			PickUpPoint2
-		</th>
-		<th>
-			PickUpPoint3
-		</th>
-	</tr>
-	</thead>
-	<tbody>
-	@if (Model.Courses.Count() != 0)
-	{
-		@foreach (var item in Model.Courses)
-		{
-		<tr>
-			<td>
-				@item.ZealandLocation
-			</td>
-			<td>
-				@item.StartPoint
-			</td>
-			<td>
-				@item.EndPoint
-			</td>
-			<td>
-				@item.PickUpPoint1
-			</td>
-			<td>
-				@item.PickUpPoint2
-			</td>
-			<td>
-				@item.PickUpPoint3
-			</td>
-		</tr>
-		}
-	}
-	</tbody>
-</table>*@
 
 <div class="container">
 	<div class="row">
@@ -73,7 +21,9 @@
 						<h5 class="card-title">Zealand Location: @p.ZealandLocation</h5>
 						<p class="card-text">Startpoint: @p.StartPoint</p>
 						<p class="card-text">Endpoint: @p.EndPoint</p>
+						<p class="card-text">Driver: @User.Identity.Name</p>
 						<a asp-page="Detail" asp-route-id="@p.CourseId" class="btn btn-primary">More information</a>
+						<a asp-page="/Courses/Registration" asp-route-cid="@p.UserId">Show courses</a>
 					</div>
 				</div>
 				<br />

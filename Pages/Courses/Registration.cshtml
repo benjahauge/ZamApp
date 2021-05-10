@@ -1,0 +1,28 @@
+﻿@page
+@model ZamApp.Pages.Courses.RegistrationModel
+@{
+}
+
+<h3 style="color: seagreen">Course Registration</h3>
+
+<div>
+	<dl class="row">
+		<dt class="col-sm-2">@Html.DisplayNameFor(model => model.Course.UserId)</dt>
+		<dt class="col-sm-10"> @Html.DisplayFor(model => model.Course.UserId )</dt>
+
+		<dt class="col-sm-2">@Html.DisplayNameFor(model => model.Course.Bookings)</dt>
+		<dd class="col-sm-10">
+			<table class="table">
+				<tr>
+					<th>User name</th>
+				</tr>
+				@foreach (var item in Model.Course.Bookings)
+				{
+					<tr>
+						<td>@Html.DisplayFor(modelItem => item.Course.UserId)</td>
+					</tr>
+				}
+			</table>
+		</dd>
+	</dl>
+</div>
