@@ -14,16 +14,20 @@ namespace ZamApp.Models
     {
         [Key]
         public int BookingId { get; set; }
-
         public int CourseId { get; set; }
-        public Course Course { get; set; }
-
-        public int UserId { get; set; }
-        public User User { get; set; }
-
+        [Required]
+        [StringLength(450)]
+        public string UserId { get; set; }
         [Column("Date_From", TypeName = "date")]
         public DateTime DateFrom { get; set; }
         [Column("Date_To", TypeName = "date")]
         public DateTime DateTo { get; set; }
+
+        [ForeignKey(nameof(CourseId))]
+        [InverseProperty("Bookings")]
+        public virtual Course Course { get; set; }
+        [ForeignKey(nameof(UserId))]
+        [InverseProperty(nameof(AspNetUser.Bookings))]
+        public virtual AspNetUser User { get; set; }
     }
 }

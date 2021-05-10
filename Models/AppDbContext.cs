@@ -20,6 +20,6 @@ namespace ZamApp.Models
 		}
 		public virtual DbSet<Booking> Bookings { get; set; }
 		public virtual DbSet<Course> Courses { get; set; }
-		public virtual DbSet<User> Users { get; set; }
+		public virtual DbSet<AspNetUser> Users { get; set; }
 	}
 }
