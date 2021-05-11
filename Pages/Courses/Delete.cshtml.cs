@@ -31,7 +31,7 @@ namespace ZamApp.Pages.Courses
 		public IActionResult OnPost(int id)
 		{
 			repo.DeleteCourse(id);
-			return RedirectToPage("Index");
+			return RedirectToPage("GetAllCourses");
 		}
 	}
 }
