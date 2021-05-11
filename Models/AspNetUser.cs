@@ -22,14 +22,12 @@ namespace ZamApp.Models
         public string Id { get; set; }
         [StringLength(256)]
         public string Name { get; set; }
-        [Required]
         [StringLength(256)]
         public string Address { get; set; }
         [StringLength(256)]
         public string UserName { get; set; }
         [StringLength(256)]
         public string NormalizedUserName { get; set; }
-        [Required]
         [StringLength(256)]
         public string Email { get; set; }
         [StringLength(256)]

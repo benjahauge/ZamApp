@@ -19,6 +19,12 @@ namespace ZamApp.Models
 
         [Key]
         public int CourseId { get; set; }
+        [Column(TypeName = "date")]
+        [Required]
+        public DateTime StartDateTime { get; set; }
+        [Column(TypeName = "date")]
+        [Required]
+        public DateTime EndDateTime { get; set; }
         [Required]
         [StringLength(50)]
         public string StartPoint { get; set; }
@@ -32,11 +38,11 @@ namespace ZamApp.Models
         [StringLength(50)]
         public string PickUpPoint1 { get; set; }
         [StringLength(50)]
-        public string? PickUpPoint2 { get; set; }
+        public string PickUpPoint2 { get; set; }
         [StringLength(50)]
-        public string? PickUpPoint3 { get; set; }
+        public string PickUpPoint3 { get; set; }
         [Required]
-        public string? UserId { get; set; }
+        public string UserId { get; set; }
 
         [ForeignKey(nameof(UserId))]
         [InverseProperty(nameof(AspNetUser.Courses))]

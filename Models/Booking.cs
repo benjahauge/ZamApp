@@ -18,10 +18,8 @@ namespace ZamApp.Models
         [Required]
         [StringLength(450)]
         public string UserId { get; set; }
-        [Column("Date_From", TypeName = "date")]
-        public DateTime DateFrom { get; set; }
-        [Column("Date_To", TypeName = "date")]
-        public DateTime DateTo { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime Date { get; set; }
 
         [ForeignKey(nameof(CourseId))]
         [InverseProperty("Bookings")]
