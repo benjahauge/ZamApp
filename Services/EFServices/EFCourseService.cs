@@ -49,5 +49,18 @@ namespace ZamApp.Services.EFServices
 			_context.SaveChanges();
 			return c;
 		}
+
+		public Course DeleteCourse(int id)
+		{
+			Course course = _context.Courses.Find(id);
+			if (course != null)
+			{
+				_context.Courses.Remove(course);
+				_context.SaveChanges();
+			}
+
+			return course;
+
+		}
 	}
 }
