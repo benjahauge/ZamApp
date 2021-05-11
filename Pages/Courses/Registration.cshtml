@@ -6,27 +6,45 @@
 <h3 style="color: seagreen">Course Registration</h3>
 
 <div>
-	<dl class="row">
-		<dt class="col-sm-2">@Html.DisplayNameFor(model => model.Course.CourseId)</dt>
-		<dt class="col-sm-10"> @Html.DisplayFor(model => model.Course.CourseId )</dt>
+    <dl class="row">
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Course.CourseId)</dt>
+        <dt class="col-sm-10"> @Html.DisplayFor(model => model.Course.CourseId)</dt>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Course.StartDateTime)</dt>
+        <dt class="col-sm-10"> @Html.DisplayFor(model => model.Course.StartDateTime)</dt>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Course.EndDateTime)</dt>
+        <dt class="col-sm-10"> @Html.DisplayFor(model => model.Course.EndDateTime)</dt>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Course.StartPoint)</dt>
+        <dt class="col-sm-10"> @Html.DisplayFor(model => model.Course.StartPoint)</dt>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Course.EndPoint)</dt>
+        <dt class="col-sm-10"> @Html.DisplayFor(model => model.Course.EndPoint)</dt>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Course.ZealandLocation)</dt>
+        <dt class="col-sm-10"> @Html.DisplayFor(model => model.Course.ZealandLocation)</dt>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Course.PickUpPoint1)</dt>
+        <dt class="col-sm-10"> @Html.DisplayFor(model => model.Course.PickUpPoint1)</dt>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Course.PickUpPoint2)</dt>
+        <dt class="col-sm-10"> @Html.DisplayFor(model => model.Course.PickUpPoint2)</dt>
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Course.PickUpPoint3)</dt>
+        <dt class="col-sm-10"> @Html.DisplayFor(model => model.Course.PickUpPoint3)</dt>
+        <dt class="col-sm-2">Driver </dt>
+        <dt class="col-sm-10"> @Html.DisplayFor(model => model.Course.UserId)</dt>
 
-		<dt class="col-sm-2">@Html.DisplayNameFor(model => model.Course.Bookings)</dt>
-		<dd class="col-sm-10">
-			<table class="table">
-				<tr>
-					<th>User name</th>
-				</tr>
-				@foreach (var item in Model.Course.Bookings)
-				{
-					<tr>
-						<td>@Html.DisplayFor(modelItem => item.User.Email)</td>
-						<td>@Html.DisplayNameFor(modelItem => item.CourseId)</td>
-					</tr>
-				}
-			</table>
-			<p>Do want to enroll in another course? Please Click here:
-				<a asp-page="/Courses/GetCourses" asp-route-cid="@Model.Course.CourseId">New Booking</a>
-			</p>
-		</dd>
-	</dl>
+        <dd class="col-sm-10">
+            @*<table class="table">
+                <tr>
+                    <th>User name</th>
+                </tr>
+                @foreach (var item in Model.Course.Bookings)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.)</td>
+                        <td>@Html.DisplayNameFor(modelItem => item.CourseId)</td>
+                    </tr>
+                }
+            </table>*@
+            <p>
+                Do want to enroll in another course? Please Click here:
+                <a asp-page="/Courses/GetAllCourses" asp-route-cid="@Model.Course.CourseId" class="btn btn-primary">New Booking</a>
+            </p>
+        </dd>
+    </dl>
 </div>

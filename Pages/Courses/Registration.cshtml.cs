@@ -30,5 +30,6 @@ namespace ZamApp.Pages.Courses
 
 	        return Page();
         }
+
     }
 }
