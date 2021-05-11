@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using ZamApp.Models;
 using ZamApp.Services.Interface;
 
@@ -23,7 +24,9 @@ namespace ZamApp.Services.EFServices
 
 		public Course GetCourse(int id)
 		{
-			return _context.Courses.Find(id);
+			var course = _context.Courses.Include(c => c.Bookings).AsNoTracking().FirstOrDefault(b => b.CourseId == id);
+			return course;
+			//return _context.Courses.Find(id);
 		}
 
 		public Course AddCourse(Course c)
