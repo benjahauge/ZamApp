@@ -25,7 +25,7 @@
 						<p class="card-text">Endpoint: @p.EndPoint</p>
 						<p class="card-text">Driver: @p.UserId</p>
 						<a asp-page="Detail" asp-route-id="@p.CourseId" class="btn btn-primary">More information</a>
-						<a asp-page="/Courses/Registration" asp-route-cid="@p.CourseId">Show courses</a>
+						<a asp-page="/Courses/Registration" asp-route-cid="@p.CourseId" class="btn btn-primary">Show courses</a>
 						<a asp-page="Delete" asp-route-id="@p.CourseId" class="btn btn-danger m-1">Delete</a>
 					</div>
 				</div>
