@@ -7,8 +7,8 @@
 
 <div>
 	<dl class="row">
-		<dt class="col-sm-2">@Html.DisplayNameFor(model => model.Course.UserId)</dt>
-		<dt class="col-sm-10"> @Html.DisplayFor(model => model.Course.UserId )</dt>
+		<dt class="col-sm-2">@Html.DisplayNameFor(model => model.Course.CourseId)</dt>
+		<dt class="col-sm-10"> @Html.DisplayFor(model => model.Course.CourseId )</dt>
 
 		<dt class="col-sm-2">@Html.DisplayNameFor(model => model.Course.Bookings)</dt>
 		<dd class="col-sm-10">
@@ -19,11 +19,14 @@
 				@foreach (var item in Model.Course.Bookings)
 				{
 					<tr>
-						<td>@Html.DisplayFor(modelItem => item.Course.UserId)</td>
-						<td>@Html.DisplayNameFor(modelItem => item.User.Email)</td>
+						<td>@Html.DisplayFor(modelItem => item.User.Email)</td>
+						<td>@Html.DisplayNameFor(modelItem => item.CourseId)</td>
 					</tr>
 				}
 			</table>
+			<p>Do want to enroll in another course? Please Click here:
+				<a asp-page="/Courses/GetCourses" asp-route-cid="@Model.Course.CourseId">New Booking</a>
+			</p>
 		</dd>
 	</dl>
 </div>

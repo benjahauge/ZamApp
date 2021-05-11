@@ -24,7 +24,10 @@ namespace ZamApp.Services.EFServices
 
 		public Course GetCourse(int id)
 		{
-			var course = _context.Courses.Include(c => c.Bookings).AsNoTracking().FirstOrDefault(b => b.CourseId == id);
+			var course = _context.Courses.Include(c => c.Bookings).ThenInclude(b => b.User)
+				.AsNoTracking()
+				.FirstOrDefault(m => m.CourseId == id);
+			//var course = _context.Courses.Include(c => c.Bookings).AsNoTracking().FirstOrDefault(b => b.CourseId == id);
 			return course;
 			//return _context.Courses.Find(id);
 		}
